@@ -1,0 +1,236 @@
+/*Auch unter: https://www.w3schools.com/code/tryit.asp?filename=G34FOD64URT3 */
+
+body {
+	font-family: 'PT Sans', sans-serif;
+	font-size: 16pt;
+}
+header{
+	font-size: 26pt;
+	text-align: center;
+}
+#outPW {
+	font-family: 'Cousine', monospace;
+	width: 200px;
+}
+input {
+	font-family: 'Cousine', monospace;
+	font-size:16pt;
+	border:none;
+}
+h3 {
+	color: #009;
+	font-size: 22pt;
+}
+#number {width: 50px;}
+footer {
+	background-color: #fff;
+	color: #2196F3;
+	border: 3px solid #2196F3;
+	margin: 1%;
+	padding: 10px;
+}
+q {quotes: "»" "«";}
+button {
+   	font-size: 16pt;
+   	padding: 6px;
+   	background-color:#fff;
+   	border: 2px solid #2196F3;
+   	color: #2196F3;
+	transition-duration: 0.4s;
+}
+button:hover {
+	color:#fff;
+	background-color:#2196F3;
+   	cursor:pointer;
+   	}
+#generator {
+	margin: 1%;
+	padding: 8px;
+	border: 3px solid #2196F3;
+	width: 40%;
+	float:left;
+}
+#content {
+	margin: 1%;
+	padding: 8px;
+	border: 3px solid #2196F3;
+	width: 52%;
+	float:left;
+}
+#d3 {display: none;}
+noscript {text-align: center;}
+
+
+.check {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.check input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: #eee;
+}
+.check:hover input ~ .checkmark {
+	background-color: #ccc;
+}
+.check input:checked ~ .checkmark {
+	background-color: #2196F3;
+}
+.checkmark::after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+.check input:checked ~ .checkmark::after {
+	display: block;
+}
+.check .checkmark::after {
+	left: 9px;
+	top: 5px;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+#scrollDiv {
+	background-color:rgba(220,160,140,1);
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 1;
+	display: none;
+}
+#bnt4 {
+	display:none;
+	background-color:#2196F3;
+	color:#fff;
+	font-size: 22pt;
+	padding: 10px;
+}
+#cont {
+	clear:both;
+}
+#content input, .panel {
+	display:none;
+}
+#content input:checked ~ .panel {
+	display:block;
+}
+#content input:checked ~ .acc h3::after {
+	content:" - ";
+}
+#content .panel p {
+	margin-left: 24px;
+}
+.panel {line-height: 1.6;}
+.acc {
+	background-color: #666;
+	cursor:pointer;
+}
+.acc h3::after {
+	content:" + ";
+}
+/*Pop Ups*/
+#poupBackground {
+	background-color: rgba(0,0,0,0.4);
+	display: none;
+	position: fixed;
+	z-index: 2;
+	padding-top: 100px;
+	align-items: center;
+	left:0px;
+	top:0px;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+.close {
+	float: right;
+	color:#aaa;
+	font-size: 30px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.close:hover, .close:focus {
+	color:#666;
+}
+.popup {
+	background-color: #fff;
+	margin: auto;
+	width: 40%;
+	border: none;
+	padding: 15px;
+	display: none;
+	border-radius: 10px;
+}
+#bnt2, #bnt3 {
+	margin: 5px 5px 0px 0px;
+}
+#inPW {padding-bottom: 5px}
+/*-----@media screen für verschiedene Bildschirmgrößen------*/
+/*==========================================================*/
+
+/*Kleines Fenster auf PC & Tablet*/
+@media only screen and (min-width: 709px) and (max-width: 1054px) {
+	body, input, button {font-size:12pt;}
+	h1 {font-size:24pt;}
+	h3 {font-size: 16pt;}
+	#generator, #content {width: 45%;}
+}
+/*Handy*/
+@media only screen and (min-width: 100px) and (max-width: 708px) {
+	body {font-size:12pt;}
+	h1 {font-size:26pt;}
+	h3 {font-size: 16pt;}
+	#generator {
+		border-bottom:3px solid #2196F3;
+		border-left:none;
+		border-right:none;
+		border-top:none;
+	}
+	#content {border:none;}
+	#generator, #content {
+		width: 96%;
+		float:none;
+		margin-bottom:5px;
+		margin-left:0px;
+		margin-right:0px;
+		margin-top:0px;
+	}
+	.popup {width: 80%;}
+	.close {font-size:26pt;}
+	footer {
+		border-bottom:none;
+		border-left:none;
+		border-right:none;
+		border-top:3px solid #2196F3;
+		margin:0px;
+	}
+	input {font-size: 14pt;}
+	#choice label {
+		font-size:14pt;
+		font-weight:bold;
+		line-height:1.5;
+	}
+	#scrollDiv {display: block;}
+}
