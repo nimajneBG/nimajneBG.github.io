@@ -1,2 +1,0 @@
-# nimajneBG.github.io
-# moin
