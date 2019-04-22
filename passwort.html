@@ -8,110 +8,113 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-	<title>Passwort</title>
-	<meta charset="UTF-8">
-	<!--<meta> Angaben Autor und mobielgeräte-->
-	<meta type="author" content="Benjamin Grau">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!--Schriftarten von fonts.google.com-->
-	<link href="https://fonts.googleapis.com/css?family=Cousine|PT+Sans" rel="stylesheet">
-	<!--Icons | Font Awesome 5-->
-	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-	<!--Eigentliches Stylesheet-->
-	<link href="style.passwort.css" rel="stylesheet">
+<title>Passwort</title>
+<meta charset="UTF-8">
+<!--<meta> Angaben Seiteninfos und mobielgeräte-->
+<meta type="author" content="Benjamin Grau">
+<meta name="description" content="Informationen über sichere Passwörter und den dazu passenden Generator.">
+<meta name="keywords" content="Benjamin Grau, Passwort, Passwort Generator">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--Suchmaschienen dürfen Seite durchsuchen-->
+<meta name="robots" content="index,follow">
+<!--Schriftarten von fonts.google.com-->
+<link href="https://fonts.googleapis.com/css?family=Cousine|PT+Sans" rel="stylesheet">
+<!--Icons | Font Awesome 5-->
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+<!--Eigentliches Stylesheet-->
+<link href="style.passwort.css" rel="stylesheet">
 </head>
 <body>
-	<noscript>
-		<h1>Diese Seite funktioniert mit JavaScript</h1>
-		<h3>Bitte aktivieren sie JavaScript in ihrem Browser und laden die Seite neu!</h3>
-	</noscript>
-	<header><h1>Sichere Passwörter</h1></header>
-	<div id="generator">
-		<h3>Generator</h3>
-		<div id="choice">
-			<p><label for="number">Zeichen: </label><input id="number" type="number" value="8"></p>
-			<div id="wahl">
-				<label class="check">Großbuchstaben
-					<input type="checkbox" id="check1" value="1" checked>
-					<span class="checkmark"></span>
-				</label>
-				<label class="check">Kleinbuchstaben
-					<input type="checkbox" id="check2" value="2" checked>
-					<span class="checkmark"></span>
-				</label>
-				<label class="check">Sonderzeichen
-					<input type="checkbox" id="check3" value="3" checked>
-					<span class="checkmark"></span>
-				</label>
-				<label class="check">Zahlen
-					<input type="checkbox" id="check4" value="4" checked>
-					<span class="checkmark"></span>
-				</label>
-			</div>
-			<p id="bntP"><button id="bnt1" onclick="create(65)">Generieren!</button></p>
-		</div>
-	</div>
-	<div id="content">
-		<div>
-		<input type="checkbox" name="acc" id="acc1">
-		<label for="acc1" class="acc"><h3><i class='fas fa-question'></i>&nbsp;Warum <q>sichere Passwörter</q>&nbsp;</h3></label>
-		<div class="panel">
-			<p><q>Sichere</q> Passwörter sind immer wichtig, egal bei was ob beim Online-Banking, auf dem Handy oder fürs W-LAN Zuhause.</p>
-			<p>Es gibt leider viele <q>böse Menschen</q> im Internet und anderswo, die versuchen Accounts oder Geräte zu hacken.<q>Sichere</q> Passwörterkönnen helfen</p>
-			<p>Der größte Freund der <q>Hacker</q> ist die Bequemlichkeit, den aus Bequemlickeit wählen viel Passworter wie: <q>1234</q>, <q>password</q> und Name oder Geburtsdaten. Das Argument ist das <q>Sichere</q> Passwörter viel zu komliziert sein und man sie sich nicht merken kann, da muss jeder selbs entscheiden wie viel ihn oder ihr die eigenen Daten wert sind...</p>
-		</div>
-		</div>
-		<div>
-		<input type="checkbox" name="acc" id="acc2">
-		<label for="acc2" class="acc"><h3><i class='fas fa-lock'></i>&nbsp;Wann ist ein Passwort sicher&nbsp;</h3></label>
-		<div class="panel">
-			<p>Es gibt keine 100% sicheren Passwörter, aber um genau zu verstehen wann ein Passwort am sichersten ist muss mann sich anschauen wie die <q>Hacker</q> vorgehen.</p>
-			<p>Eine der meistgenutzten Atacken um Passwörter zu knacken (abgesehen von Trojanern) ist die <q><b>Dictionary Attack</b></q> auf Deutsch: <q><b>Wörterbuch Angriff</b></q>. Bei dem <b>Wörterbuch Angriff</b> wird eine Liste mit den meistverwendeten Passswörtern, also Namen, Zahlenkombies usw. ausprobiert. Dagegen kann mann sich mit zufällig generieten Passwörten schützen weil die nicht auf den Listen stehen. </p>
-			<p>Es gibt aber noch einen Angriff der <b>IMMER</b> funktioniert, nahmilch die <q><b>Brute Force Atack</b></q> auf Deutsch <q><b>Brutale Gewalt Angriff</b></q> dabei werden alle möglichen Kombinationen ausprobiert, vor diesem Angriff kann man sich nicht wirklich schützen. Man kan es den Angreifern nur sehr schwehr machen mit langen generierten Passwörtern.</p>
-			<p>Dabei gilt:<br>Moglichkeiten = <wbr>Anzahl der möglichen Zeichen<sup>Läge des Passworts</sup></p>
-			<p>Beispiel:</p>
-			<p>Länge: 8 Zeichen<br>
-			Anzahl möglicher Zeichen: <wbr>Groß-, Kleinbuchstaben, Sonderzeichen und Zahlen = 99<br>
-			Möglichkeiten = 99<sup>8</sup> = <wbr>9.227.446.944.279.201 &#8776; <wbr>10.000.000.000.000.000</p>
-			<p>Dafür würde ein Moderner Computer ungefähr <b>31</b> Jahre brauchen</p>
-			<p>Mehr Informationen:
-			<ul>
-				<li><a href="https://de.wikipedia.org/wiki/Brute-Force-Methode">Brute Force Angriff | Wikipedia</a></li>
-				<li><a href="https://de.wikipedia.org/wiki/W%C3%B6rterbuchangriff">Dictionary Attack | Wikipedia</a></li>
-				<li><a href="https://www.youtube.com/watch?v=lB6Lf2Lc1MY">Erklärvideo | Youtube</a></li>
-				<li><a href="https://en.m.wikipedia.org/wiki/List_of_the_most_common_passwords">Liste der meistgenutzten Passwort | Wikipedia</a>
-			</ul>
-		</div>
-		</div>
-		<div>
-		<input type="checkbox" name="acc" id="acc3">
-		<label for="acc3" class="acc"><h3><i class='fas fa-info' class="acc"></i>&nbsp;Über diese Seite&nbsp;</h3></label>
-		<div class="panel">
-			<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et</p>		
-		</div>
-		</div>
-	</div>
-	<div id="cont"></div>
-	<div id="poupBackground">
-		<div id="popup1" class="popup">
-			<span class="close" id="close1">&times;</span>
-			<h3>Passwort:</h3>
-			<input type="text" id="inPW">
-			<br>
-			<button id="bnt2" onclick="copyPW()">Kopieren</button>
-			<button id="bnt3" onclick="create(1)">Neu Generiern</button>
-		</div>
-		<div id="popup2" class="popup">
-			<span class="close" id="close2">&times;</span>
-			<p style="text-align: center;"><img src="img1.svg" width="100px"></p>
-			<h3 style="color: red;text-align: center;font-size: 24pt">Fehler</h3>
-			<p id="fail"></p>
-		</div>
-	</div>
-	<div id="scrollDiv"><button id="bnt4" onclick="topFunc()"><i class='fas fa-angle-double-up'></i></button></div>
-	<footer><p><b>&copy;&nbsp;by Benjamin Grau | 2019</b></p></footer>
+<noscript>
+<h1>Diese Seite funktioniert mit JavaScript</h1>
+<h3>Bitte aktivieren sie JavaScript in ihrem Browser und laden die Seite neu!</h3>
+</noscript>
+<header><h1>Sichere Passwörter</h1></header>
+<div id="generator">
+<h3>Generator</h3>
+<div id="choice">
+<p><label for="number">Zeichen: </label><input id="number" type="number" value="8"></p>
+<div id="wahl">
+<label class="check">Großbuchstaben
+<input type="checkbox" id="check1" value="1" checked>
+<span class="checkmark"></span>
+</label>
+<label class="check">Kleinbuchstaben
+<input type="checkbox" id="check2" value="2" checked>
+<span class="checkmark"></span>
+</label>
+<label class="check">Sonderzeichen
+<input type="checkbox" id="check3" value="3" checked>
+<span class="checkmark"></span>
+</label>
+<label class="check">Zahlen
+<input type="checkbox" id="check4" value="4" checked>
+<span class="checkmark"></span>
+</label>
+</div>
+<p id="bntP"><button id="bnt1" onclick="create(65)">Generieren!</button></p>
+</div>
+</div>
+<div id="content">
+<div>
+<input type="checkbox" name="acc" id="acc1">
+<label for="acc1" class="acc"><h3><i class='fas fa-question'></i>&nbsp;Warum <q>sichere Passwörter</q>&nbsp;</h3></label>
+<div class="panel">
+<p><q>Sichere</q> Passwörter sind immer wichtig, egal bei was ob beim Online-Banking, auf dem Handy oder fürs W-LAN Zuhause.</p>
+<p>Es gibt leider viele <q>böse Menschen</q> im Internet und anderswo, die versuchen Accounts oder Geräte zu hacken.<q>Sichere</q> Passwörterkönnen helfen</p>
+<p>Der größte Freund der <q>Hacker</q> ist die Bequemlichkeit, den aus Bequemlickeit wählen viel Passworter wie: <q>1234</q>, <q>password</q> und Name oder Geburtsdaten. Das Argument ist das <q>Sichere</q> Passwörter viel zu komliziert sein und man sie sich nicht merken kann, da muss jeder selbs entscheiden wie viel ihn oder ihr die eigenen Daten wert sind...</p>
+</div>
+</div>
+<div>
+<input type="checkbox" name="acc" id="acc2">
+<label for="acc2" class="acc"><h3><i class='fas fa-lock'></i>&nbsp;Wann ist ein Passwort sicher&nbsp;</h3></label>
+<div class="panel">
+<p>Es gibt keine 100% sicheren Passwörter, aber um genau zu verstehen wann ein Passwort am sichersten ist muss mann sich anschauen wie die <q>Hacker</q> vorgehen.</p>
+<p>Eine der meistgenutzten Atacken um Passwörter zu knacken (abgesehen von Trojanern) ist die <q><b>Dictionary Attack</b></q> auf Deutsch: <q><b>Wörterbuch Angriff</b></q>. Bei dem <b>Wörterbuch Angriff</b> wird eine Liste mit den meistverwendeten Passswörtern, also Namen, Zahlenkombies usw. ausprobiert. Dagegen kann mann sich mit zufällig generieten Passwörten schützen weil die nicht auf den Listen stehen. </p>
+<p>Es gibt aber noch einen Angriff der <b>IMMER</b> funktioniert, nahmilch die <q><b>Brute Force Atack</b></q> auf Deutsch <q><b>Brutale Gewalt Angriff</b></q> dabei werden alle möglichen Kombinationen ausprobiert, vor diesem Angriff kann man sich nicht wirklich schützen. Man kan es den Angreifern nur sehr schwehr machen mit langen generierten Passwörtern.</p>
+<p>Dabei gilt:<br>Moglichkeiten = <wbr>Anzahl der möglichen Zeichen<sup>Läge des Passworts</sup></p>
+<p>Beispiel:</p>
+<p>Länge: 8 Zeichen<br>
+Anzahl möglicher Zeichen: <wbr>Groß-, Kleinbuchstaben, Sonderzeichen und Zahlen = 99<br>
+Möglichkeiten = 99<sup>8</sup> = <wbr>9.227.446.944.279.201 &#8776; <wbr>10.000.000.000.000.000</p>
+<p>Dafür würde ein Moderner Computer ungefähr <b>31</b> Jahre brauchen</p>
+<p>Mehr Informationen:
+<ul>
+<li><a href="https://de.wikipedia.org/wiki/Brute-Force-Methode">Brute Force Angriff | Wikipedia</a></li>
+<li><a href="https://de.wikipedia.org/wiki/W%C3%B6rterbuchangriff">Dictionary Attack | Wikipedia</a></li>
+<li><a href="https://www.youtube.com/watch?v=lB6Lf2Lc1MY">Erklärvideo | Youtube</a></li>
+<li><a href="https://en.m.wikipedia.org/wiki/List_of_the_most_common_passwords">Liste der meistgenutzten Passwort | Wikipedia</a>
+</ul>
+</div>
+</div>
+<div>
+<input type="checkbox" name="acc" id="acc3">
+<label for="acc3" class="acc"><h3><i class='fas fa-info' class="acc"></i>&nbsp;Über diese Seite&nbsp;</h3></label>
+<div class="panel">
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et</p>		
+</div>
+</div>
+</div>
+<div id="cont"></div>
+<div id="poupBackground">
+<div id="popup1" class="popup">
+<span class="close" id="close1">&times;</span>
+<h3>Passwort:</h3>
+<input type="text" id="inPW"><br>
+<button id="bnt2" onclick="copyPW()">Kopieren</button>
+<button id="bnt3" onclick="create(1)">Neu Generiern</button>
+</div>
+<div id="popup2" class="popup">
+<span class="close" id="close2">&times;</span>
+<p style="text-align: center;"><img src="img1.svg" width="100px"></p>
+<h3 style="color: red;text-align: center;font-size: 24pt">Fehler</h3>
+<p id="fail"></p>
+</div>
+</div>
+<div id="scrollDiv"><button id="bnt4" onclick="topFunc()"><i class='fas fa-angle-double-up'></i></button></div>
+<footer><p><b>&copy;&nbsp;by Benjamin Grau | 2019</b></p></footer>
 	
-	<!--Script-->
-	<script src="passwort.script.js"></script>
+<!--Script-->
+<script src="passwort.script.js"></script>
 </body>
 </html>
