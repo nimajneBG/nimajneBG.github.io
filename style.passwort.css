@@ -15,8 +15,8 @@ header{
 input {
 	font-family: 'Cousine', monospace;
 	font-size:16pt;
-	border:none;
 }
+#inPW {border: none;}
 h3 {
 	color: #009;
 	font-size: 22pt;
