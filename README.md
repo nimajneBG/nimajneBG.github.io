@@ -9,6 +9,6 @@ Ich habe den JavaScript Code während eines Schulpraktikums geschreiben und ihn 
 ## Probleme
 Ich binn noch dabei aus dem "else if" eine "switch" Abfrage zu machen.
 
-## Für weitere Informationen [hier](http://domain.de) klicken.
+## [Seite](http://domain.de) 
 
 Benjamin G. 29.04.19
