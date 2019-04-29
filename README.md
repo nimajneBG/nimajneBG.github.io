@@ -9,6 +9,6 @@ Ich habe den JavaScript Code während eines Schulpraktikums geschreiben und ihn 
 ## Probleme
 Ich binn noch dabei aus dem "else if" eine "switch" Abfrage zu machen.
 
-## [Seite](http://domain.de) 
+## [Seite](https://nimajnebg.github.io/passwort.html) 
 
 Benjamin G. 29.04.19
