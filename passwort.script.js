@@ -155,3 +155,12 @@ function topFunc() {
 	document.body.scrollTop = 0;
 	document.documentElement.scrollTop = 0;
 }
+//Zeichen anzeigen
+var slide = document.getElementById("number");
+var outSlide = document.getElementById("zeichen");
+
+outSlide.innerHTML = slide.value;
+
+slide.oninput = function() {
+	outSlide.innerHTML = this.value;;
+}
