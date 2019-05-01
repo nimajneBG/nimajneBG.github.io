@@ -269,4 +269,12 @@ noscript {text-align: center;}
 		line-height:1.5;
 	}
 	#scrollDiv {display: block;}
+	.slider::-webkit-slider-thumb {
+		width: 30px;
+		height: 30px;
+	}
+	.slider::-moz-range-thumb {
+		width: 30px;
+		height: 30px;
+	}
 }
