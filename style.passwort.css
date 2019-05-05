@@ -40,8 +40,8 @@ button {
 button:hover {
 	color:#fff;
 	background-color:#2196F3;
-   	cursor:pointer;
-   	}
+  cursor:pointer;
+}
 #generator {
 	margin: 1%;
 	padding: 8px;
@@ -141,7 +141,10 @@ noscript {text-align: center;}
 #content .panel p {
 	margin-left: 24px;
 }
-.panel {line-height: 1.6;}
+.panel {
+	line-height: 1.6;
+	font-variant-numeric: oldstyle-nums;
+}
 .acc {
 	background-color: #666;
 	cursor:pointer;
@@ -190,7 +193,8 @@ noscript {text-align: center;}
   -webkit-appearance: none;
   width: 280px;
   height: 6px;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
+	margin-top: 18px;
   border-radius: 5px;
   background: #d3d3d3;
   outline: none;
