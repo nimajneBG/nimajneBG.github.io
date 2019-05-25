@@ -16,6 +16,10 @@ input {
 	font-family: 'Cousine', monospace;
 	font-size:16pt;
 }
+a {
+	color:#ccc;
+}
+a:hover {color: #2196F3;}
 #inPW {border: none;}
 h3 {
 	color: #009;
