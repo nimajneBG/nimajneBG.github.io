@@ -18,6 +18,7 @@ input {
 }
 a {
 	color:#ccc;
+	text-decoration:none;
 }
 a:hover {color: #2196F3;}
 #inPW {border: none;}
