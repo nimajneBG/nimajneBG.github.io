@@ -157,6 +157,12 @@ noscript {text-align: center;}
 .acc h3::after {
 	content:" + ";
 }
+#impressumDIV {
+	margin: 1%;
+	padding: 8px;
+	border: 3px solid #2196F3;
+	width: 52%;
+}
 /*Pop Ups*/
 #poupBackground {
 	background-color: rgba(0,0,0,0.4);
