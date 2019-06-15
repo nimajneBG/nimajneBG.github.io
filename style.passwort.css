@@ -8,6 +8,9 @@ header{
 	font-size: 26pt;
 	text-align: center;
 }
+h1 .point {
+	font-size:38pt;
+}
 #outPW {
 	font-family: 'Cousine', monospace;
 	width: 200px;
