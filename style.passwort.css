@@ -237,6 +237,12 @@ noscript {text-align: center;}
 #zeichen {
 	font-family: 'Cousine', monospace;
 }
+.point {
+	font-family: sans-serif;
+	font-size:34pt;
+	color:#ccc;
+}
+}
 /*-----@media screen für verschiedene Bildschirmgrößen------*/
 /*==========================================================*/
 
