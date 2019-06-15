@@ -297,5 +297,8 @@ noscript {text-align: center;}
 		width: 30px;
 		height: 30px;
 	}
-	.point {font-size:24pt;}
+	.point {
+		font-size:24pt;
+		color: red;
+	}
 }
