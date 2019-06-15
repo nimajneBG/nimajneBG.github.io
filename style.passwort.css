@@ -238,7 +238,7 @@ noscript {text-align: center;}
 	font-family: 'Cousine', monospace;
 }
 .point {
-	font-family: 'Roboto', serif;
+	font-family: serif;
 	font-size:34pt;
 	color:#ccc;
 }
@@ -297,4 +297,5 @@ noscript {text-align: center;}
 		width: 30px;
 		height: 30px;
 	}
+	.point {font-size:24;}
 }
