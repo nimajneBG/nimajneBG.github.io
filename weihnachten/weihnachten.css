@@ -1,0 +1,35 @@
+body {
+  font-family: 'Quicksand', 'Verdana', 'Arial', sans-serif;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+}
+hr {
+  border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 153, 0), rgba(0, 0, 153, 0.75), rgba(0, 0, 153, 0));
+}
+.anrede {
+  font-weight: 900;
+}
+.absender {
+  text-align: right;
+  font-family: 'Amatic SC', 'Quicksand', 'Verdana', 'Arial', sans-serif;
+  font-weight: 900;
+  font-size: 26px;
+  color: #009;
+}
+.content-div {
+  max-width: 550px;
+}
+.svg-div {
+  text-align: center;
+}
+#baum {
+   stroke-dasharray: 2512.57373046875;
+   stroke-dashoffset: 2512.57373046875;
+   animation: dash2 6s linear infinite;
+}
+@keyframes dash2 {
+   to { stroke-dashoffset: 0;}
+}
