@@ -1,11 +1,8 @@
 //© by Benjamin Grau
 
 //Variabeln
-var Zahlen = "1234567890";
-var BuchstabenG = "QWERTZUIOPÜASDFGHJKLÖÄYXCVBNM";
-var BuchstabenK = "qwertzuiopüasdfghjklöäyxcvbnm";
-var Sonderzeichen = "!§$%&/()=?<>|,.;;-_{[]}@€^°+#*'ß";
-var Passwort;
+var zeichen = { grossbuchstaben: "QWERTZUIOPÜASDFGHJKLÖÄYXCVBNM", kleinbuchstaben: "qwertzuiopüasdfghjklöäyxcvbnm", sonderzeichen: "!§$%&/()=?<>|,.;;-_{[]}@€^°+#*'~€²³ß", zahlen: "1234567890"};
+var passwort;
 var list;
 var safety = 0;
 var max = 0;
@@ -28,20 +25,20 @@ function create() {
 	var check3 = document.getElementById("check3").checked;
 	var check4 = document.getElementById("check4").checked;
 	var anzahlZeichen = Number(slide.value);
-	Passwort = "";
+	passwort = "";
 	list = "";
 
 	if (check1 == true) {
-		list += BuchstabenG;
+		list += zeichen.grossbuchstaben;
 	}
 	if (check2 == true) {
-		list += BuchstabenK;
+		list += zeichen.kleinbuchstaben;
 	}
 	if (check3 == true) {
-		list += Sonderzeichen;
+		list += zeichen.sonderzeichen;
 	}
 	if (check4 == true) {
-		list += Zahlen;
+		list += zeichen.zahlen;
 	}
 
 	//Fehlererkennung
@@ -57,14 +54,14 @@ function create() {
 	for (var i = 0; i < anzahlZeichen; i++) {
 		max = list.length;
 		zufall = Random(max);
-		Passwort += list.charAt(zufall);
+		passwort += list.charAt(zufall);
 	}
 
 	//Ausgabe
 	bnt1.innerHTML = "Neu Generieren!";
 	popupB.style.display = "block";
 	pop1.style.display = "block";
-	document.getElementById("inPW").value = Passwort;
+	document.getElementById("inPW").value = passwort;
 
 }
 
