@@ -1,4 +1,4 @@
-//Auch unter: https://www.w3schools.com/code/tryit.asp?filename=G34FOD64URT3
+//© by Benjamin Grau
 
 //Variabeln
 var Zahlen = "1234567890";
@@ -15,8 +15,9 @@ var pop2 = document.getElementById("popup2");
 var zufall;
 var slide = document.getElementById("number");
 var outSlide = document.getElementById("zeichen");
+var bnt1 = document.getElementById("bnt1");
 
-function create() {
+bnt1.onclick = function() {
 	//Variabeln
 	var check1 = document.getElementById("check1").checked;
 	var check2 = document.getElementById("check2").checked;
@@ -32,18 +33,32 @@ function create() {
 	if (check2 == true) {
 		list += BuchstabenK;
 	}
-	if
+	if (check3 == true) {
+		list += Sonderzeichen;
+	}
+	if (check4 == true) {
+		list += Zahlen;
+	}
+
+	//Fehlererkennung
+	if (check1 == false && check2 == false && check3 == false && check4 == false) {
+		console.log("Fehler; Es muss midesten eine Zeichengruppe ausgewählt sein");
+		return;
+	}else if (anzahlZeichen < 1) {
+		console.log("Fehler; Das Passwort muss mindesten ein Zeichen lang sein");
+		return;
+	}
 
 	//Erstellen
 	for (var i = 0; i < anzahlZeichen; i++) {
-
+		zufall = Random(1);
 	}
 
 	//Ausgabe
-	document.getElementById("bnt1").innerHTML = "Neu Generieren!";
+	bnt1.innerHTML = "Neu Generieren!";
 	popupB.style.display = "block";
 	pop1.style.display = "block";
-	document.getElementById("inPW").value = PW;
+	document.getElementById("inPW").value = "Passwort";
 
 }
 
@@ -56,7 +71,7 @@ function copyPW() {
 }
 
 //Zufall
-function getRandomInt(max) {
+function Random(max) {
 	var x = Math.floor(Math.random() * Math.floor(max));
 	var y = x + 1;
 	return y;
@@ -80,9 +95,7 @@ document.getElementById("close2").onclick = function() {
 	pop2.style.display = "none";
 }
 
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
+window.onscroll = function() {
 	if (document.body.scrollTop > 180 || document.documentElement.scrollTop > 180) {
 		document.getElementById("bnt4").style.display = "block";
 	} else {
