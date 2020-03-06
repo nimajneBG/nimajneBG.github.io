@@ -16,8 +16,12 @@ var zufall;
 var slide = document.getElementById("number");
 var outSlide = document.getElementById("zeichen");
 var bnt1 = document.getElementById("bnt1");
+var bnt3 = document.getElementById("bnt3");
 
-bnt1.onclick = function() {
+bnt1.onclick = function() {create()}
+bnt3.onclick = function() {create()}
+
+function create() {
 	//Variabeln
 	var check1 = document.getElementById("check1").checked;
 	var check2 = document.getElementById("check2").checked;
@@ -51,14 +55,16 @@ bnt1.onclick = function() {
 
 	//Erstellen
 	for (var i = 0; i < anzahlZeichen; i++) {
-		zufall = Random(1);
+		max = list.length;
+		zufall = Random(max);
+		Passwort += list.charAt(zufall);
 	}
 
 	//Ausgabe
 	bnt1.innerHTML = "Neu Generieren!";
 	popupB.style.display = "block";
 	pop1.style.display = "block";
-	document.getElementById("inPW").value = "Passwort";
+	document.getElementById("inPW").value = Passwort;
 
 }
 
@@ -73,8 +79,7 @@ function copyPW() {
 //Zufall
 function Random(max) {
 	var x = Math.floor(Math.random() * Math.floor(max));
-	var y = x + 1;
-	return y;
+	return x;
 }
 
 //Popup schließen
