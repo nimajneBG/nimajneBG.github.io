@@ -1,7 +1,7 @@
 //© by Benjamin Grau
 
 //Variabeln
-var zeichen = { grossbuchstaben: "QWERTZUIOPÜASDFGHJKLÖÄYXCVBNM", kleinbuchstaben: "qwertzuiopüasdfghjklöäyxcvbnm", sonderzeichen: "!§$%&/()=?<>|,.;;-_{[]}@€^°+#*'~€²³ß", zahlen: "1234567890"};
+var zeichen = { grossbuchstaben: "QWERTZUIOPÜASDFGHJKLÖÄYXCVBNM", kleinbuchstaben: "qwertzuiopüasdfghjklöäyxcvbnm", sonderzeichen: "!§$%&/()=?<>|,.;;-_{[]}@€^°+#*'~€²³ß", zahlen: "1234567890" };
 var passwort;
 var list;
 var safety = 0;
@@ -43,10 +43,10 @@ function create() {
 
 	//Fehlererkennung
 	if (check1 == false && check2 == false && check3 == false && check4 == false) {
-		console.log("Fehler; Es muss midesten eine Zeichengruppe ausgewählt sein");
+		console.warn("Fehler; Es muss midesten eine Zeichengruppe ausgewählt sein");
 		return;
 	}else if (anzahlZeichen < 1) {
-		console.log("Fehler; Das Passwort muss mindesten ein Zeichen lang sein");
+		console.warn("Fehler; Das Passwort muss mindesten ein Zeichen lang sein");
 		return;
 	}
 
