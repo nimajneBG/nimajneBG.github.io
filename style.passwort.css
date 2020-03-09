@@ -8,9 +8,6 @@ header{
 	font-size: 26pt;
 	text-align: center;
 }
-h1 .point {
-	font-size:38pt;
-}
 #outPW {
 	font-family: 'Cousine', monospace;
 	width: 200px;
@@ -255,12 +252,7 @@ noscript {
 #zeichen {
 	font-family: 'Cousine', monospace;
 }
-.point {
-	font-family: serif;
-	font-size:34pt;
-	color:#ccc;
-}
-}
+
 /*-----@media screen für verschiedene Bildschirmgrößen------*/
 /*==========================================================*/
 
@@ -314,8 +306,5 @@ noscript {
 	.slider::-moz-range-thumb {
 		width: 30px;
 		height: 30px;
-	}
-	.point {
-		font-size:24pt;
 	}
 }
