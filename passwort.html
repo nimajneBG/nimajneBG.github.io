@@ -2,75 +2,84 @@
 
 <!DOCTYPE html>
 <html lang="de">
-<head>
-<title>Passwort</title>
-<meta charset="UTF-8">
-<!--<meta> Angaben Seiteninfos und mobielgeräte-->
-<meta name="author" content="Benjamin Grau">
-<meta name="description" content="Informationen über sichere Passwörter und den dazu passenden <b>Generator</b>. U+2714 Kostenlos">
-<meta name="keywords" content="Benjamin Grau, Passwort, Passwort Generator">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--Suchmaschienen dürfen Seite durchsuchen-->
-<meta name="robots" content="index,follow">
-<!--Schriftarten von fonts.google.com-->
-<link href="https://fonts.googleapis.com/css?family=Cousine|PT+Sans|Roboto" rel="stylesheet">
-<!--Icons | Font Awesome 5-->
-<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-<!--Eigentliches Stylesheet-->
-<link href="style.passwort.css" rel="stylesheet">
-</head>
-<body>
-<noscript>
-<h1>Diese Seite funktioniert mit JavaScript</h1>
-<h3>Bitte aktivieren sie JavaScript in ihrem Browser und laden die Seite neu!</h3>
-</noscript>
-<header><h1>Sichere Passwörter</h1></header>
-<div id="generator">
-<h3>Generator<span class="point">.</span></h3>
-<div id="choice">
-<label>Länge: <span id="zeichen"></span> Zeichen</label><br>
-<input type="range" min="1" max="25" value="8" class="slider" id="number">
-<div id="wahl">
-<label class="check">Großbuchstaben
-<input type="checkbox" id="check1" value="1" checked>
-<span class="checkmark"></span>
-</label>
-<label class="check">Kleinbuchstaben
-<input type="checkbox" id="check2" value="2" checked>
-<span class="checkmark"></span>
-</label>
-<label class="check">Sonderzeichen
-<input type="checkbox" id="check3" value="3" checked>
-<span class="checkmark"></span>
-</label>
-<label class="check">Zahlen
-<input type="checkbox" id="check4" value="4" checked>
-<span class="checkmark"></span>
-</label>
-</div>
-<p id="bntP"><button id="bnt1" onclick="create">Generieren!</button></p>
-</div>
-</div>
-<div id="cont"></div>
-<div id="poupBackground">
-<div id="popup1" class="popup">
-<span class="close" id="close1">&times;</span>
-<h3>Passwort:</h3>
-<input type="text" id="inPW"><br>
-<button id="bnt2" onclick="copyPW()">Kopieren</button>
-<button id="bnt3">Neu Generiern</button>
-</div>
-<div id="popup2" class="popup">
-<span class="close" id="close2">&times;</span>
-<p style="text-align: center;"><img src="img1.svg" width="100px"></p>
-<h3 style="color: red;text-align: center;font-size: 24pt">Fehler</h3>
-<p id="fail"></p>
-</div>
-</div>
-<div id="scrollDiv"><button id="bnt4" onclick="topFunc()"><i class='fas fa-angle-double-up'></i></button></div>
-<footer><p><b>&copy;&nbsp;by Benjamin Grau | 2020</b></p></footer>
 
-<!--Script-->
-<script src="passwort.script.js"></script>
+<head>
+    <title>Passwort</title>
+    <meta charset="UTF-8">
+    <!--<meta> Angaben Seiteninfos und mobielgeräte-->
+    <meta name="author" content="Benjamin Grau">
+    <meta name="description" content="Informationen über sichere Passwörter und den dazu passenden <b>Generator</b>. U+2714 Kostenlos">
+    <meta name="keywords" content="Benjamin Grau, Passwort, Passwort Generator">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Suchmaschienen dürfen Seite durchsuchen-->
+    <meta name="robots" content="index,follow">
+    <!--Schriftarten von fonts.google.com-->
+    <link href="https://fonts.googleapis.com/css?family=Cousine|PT+Sans|Roboto" rel="stylesheet">
+    <!--Icons | Font Awesome 5-->
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <!--Eigentliches Stylesheet-->
+    <link href="style.passwort.css" rel="stylesheet">
+</head>
+
+<body>
+    <!--NoScript-->
+    <noscript>
+        <h1>Diese Seite funktioniert mit JavaScript</h1>
+        <h3>Bitte aktivieren sie JavaScript in ihrem Browser und laden die Seite neu!</h3>
+    </noscript>
+
+    <header>
+        <h1>Sichere Passwörter</h1>
+    </header>
+    <div id="generator">
+        <h3>Generator<span class="point">.</span></h3>
+        <div id="choice">
+            <label>Länge: <span id="zeichen"></span> Zeichen</label><br>
+            <input type="range" min="1" max="25" value="8" class="slider" id="number">
+            <div id="wahl">
+                <label class="check">Großbuchstaben
+                    <input type="checkbox" id="check1" value="1" checked>
+                    <span class="checkmark"></span>
+                </label>
+                <label class="check">Kleinbuchstaben
+                    <input type="checkbox" id="check2" value="2" checked>
+                    <span class="checkmark"></span>
+                </label>
+                <label class="check">Sonderzeichen
+                    <input type="checkbox" id="check3" value="3" checked>
+                    <span class="checkmark"></span>
+                </label>
+                <label class="check">Zahlen
+                    <input type="checkbox" id="check4" value="4" checked>
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <p id="bntP"><button id="bnt1" onclick="create">Generieren!</button></p>
+        </div>
+    </div>
+    <div id="cont"></div>
+    <div id="poupBackground">
+        <div id="popup1" class="popup">
+            <span class="close" id="close1">&times;</span>
+            <h3>Passwort:</h3>
+            <input type="text" id="inPW"><br>
+            <button id="bnt2" onclick="copyPW()">Kopieren</button>
+            <button id="bnt3">Neu Generiern</button>
+        </div>
+        <div id="popup2" class="popup">
+            <span class="close" id="close2">&times;</span>
+            <p style="text-align: center;"><img src="img1.svg" width="100px"></p>
+            <h3 style="color: red;text-align: center;font-size: 24pt">Fehler</h3>
+            <p id="fail"></p>
+        </div>
+    </div>
+    <div id="scrollDiv"><button id="bnt4" onclick="topFunc()"><i class='fas fa-angle-double-up'></i></button></div>
+    <footer>
+        <p><b>&copy;&nbsp;by Benjamin Grau | 2020</b></p>
+    </footer>
+
+    <!--Script-->
+    <script src="passwort.script.js"></script>
 </body>
+
 </html>
