@@ -20,10 +20,10 @@ input {
 	font-size:16pt;
 }
 a {
-	color:#ccc;
+	color:#2196F3;
 	text-decoration: none;
 }
-a:hover {color: #2196F3;}
+a:hover {text-decoration: underline;}
 #inPW {border: none;}
 h3 {
 	color: #009;
@@ -65,8 +65,23 @@ button:hover {
 	float:left;
 }
 #d3 {display: none;}
-noscript {text-align: center;}
 
+noscript {
+	z-index: 10;
+	width: 100% !important;
+	height: 100% !important;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.noscript-container {
+	padding: 20px;
+	border: 3px solid #2196F3;
+	margin: auto;
+	width: 350px;
+		text-align: center;
+}
 
 .check {
 	display: block;
@@ -165,7 +180,7 @@ noscript {text-align: center;}
 	padding: 10px;
 	border: 3px solid #2196F3;
 }
-/*Pop Ups*/
+/*Popups*/
 #poupBackground {
 	background-color: rgba(0,0,0,0.4);
 	display: none;
