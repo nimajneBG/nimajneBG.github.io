@@ -17,9 +17,15 @@ const text = {
     'USA': '<p>Der Teil von Nordamerika, der heute als USA bekannt ist, war eine der frühen Britischen (Siedlungs-)Kolonien.</p><p>Weil der Seeweg sehr lange gedauert hat, waren die USA auch als Kolonie schon relativ unabhängig, sie wollten aber richtig unabhängig sein und es gab den Unabhängigkeitskrieg, den die USA mit Hilfe von Frankreich gewannen und so eine der ersten Kolonien waren, die unabhängig wurde.</p><p>Die Ureinwohner wurden aber von den Siedler stark bekämpft und es wurden sehr viele getötet. Außerdem wurden viele afrikanische Sklaven in die USA geliefert um dort auf Plantagen zu arbeiten.</p>',
     'Australien': '<p>Australien war eine Britische Strafkolonie, in die viele brittische Häftlinge gebracht wurden.</p>',
     'Togo': '<p>War eine Deutsche Kolonie, die sehr stark ausgebeutet wurde und die einzige Deutsche Kolonie war die mehr eingenommen hat, als sir Kosten verursacht hat.</p>',
-    'Indien': 'Test',
-    'Deutsch Südwestafrika (Heute Namibia)': 'Test',
-    'Südkorea': 'Test',
+    'Indien': '<p>Indien war sowohl eine Britische als auch Niederländische Kolonie. Und ein sehr bekanntest Beispiel für Kolonialismus.</p><p>Die Briten hatten eine sehr durchdachtes System, bei dem nur sehr wenige und oft zahlenmäßig unterlegene Britische Soldaten, die häufig gewechselt wurden, mit extremer härte alle Aufstände niederschlugen, auch um abzuschrecken. Außerdem bauten die Briten in Inden Opium an, das sie dann nach China verkauften, was zu den Opium-Kriegen führte.</p>',
+    'Kanada': '<p>Kanada war Britische und Französische (Siedlungs-)Kolonie, weil beide Länder verfeindet waren gab es immer wieder Kämpfe um Kanada.</p><p>Kanadaa ist auch einer der Staaten, die immer noch die Britische Queen als Königinn haben.</p>',
+    'Deutsch Südwestafrika (Heute Namibia)': 'War eine ursprünglich als Siedlungskolonie, aber nie so umgesetzte Deutsche Kolonie.',
+    'Südkorea': 'Südkorea war einen Japanische (War die einzige Kolonialmacht außerhalb Europas) Kolonie, hat sich aber zu einem der technologisch am weitesten Land etwickelt was besonders ist, weil viele andere ehemalige Kolonien auch heute noch wirtschaftliche Probleme haben.',
+    'Deutsch Ostafrika (Tansania)': 'Deutsch Ostafrika war eine Deutsche Beherrschungskolonie.',
+    'Kamerun': 'Kamerun war eine Deutsche Beherrschungskolonie.',
+    'Deutsch Samoa': 'Deutsch Samoa war eine Deutsche Beherrschungskolonie.',
+    'Deutsch Neuguinea': 'Deutsch Neuguinea war eine Deutsche Beherrschungskolonie.',
+    'Kiautschou': 'Kiautschou war eine Deutsche Kolonie, die dem Deutschen Reich den Zugang zu China ermöglichen sollte. Außerdem war es nicht dem Reichskolonialamt unterstellt sondern der Marine.'
 }
 
 

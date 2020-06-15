@@ -219,7 +219,29 @@
             <article id="article8">
                 <h2>Quellen</h2>
                 <ul>
-                    <li><a href="http://example.com" class="link">example.com</a></li>
+                    <li>
+                        <a href="https://www.spektrum.de/lexikon/geographie/kolonialismus/4238"
+                            class="link">https://www.spektrum.de/lexikon/geographie/kolonialismus/4238</a>
+                    </li>
+                    <li>
+                        <a href="https://www.bpb.de/apuz/146973/geschichte-des-europaeischen-und-deutschen-kolonialismus"
+                            class="link">https://www.bpb.de/apuz/146973/geschichte-des-europaeischen-und-deutschen-kolonialismus</a>
+                    </li>
+                    <li>
+                        <a href="https://www.geo.de/wissen/21459-rtkl-bilanz-wie-der-kolonialismus-die-welt-bis-heute-praegt"
+                            class="link">https://www.geo.de/wissen/21459-rtkl-bilanz-wie-der-kolonialismus-die-welt-bis-heute-praegt</a>
+                    </li>
+                    <li>
+                        <a href="https://www.welt.de/geschichte/article172647940/Erster-Opiumkrieg-Als-England-weltgroesster-Drogendealer-wurde.html"
+                            class="link">https://www.welt.de/geschichte/article172647940/Erster-Opiumkrieg-Als-England-weltgroesster-Drogendealer-wurde.html</a>
+                    </li>
+                    <li>
+                        <a href="https://esdifferent.com/difference-between-colonialism-and-imperialism"
+                            class="link">https://esdifferent.com/difference-between-colonialism-and-imperialism</a>
+                    </li>
+                    <li>
+                        <a href="https://www.openstreetmap.org/" class="link">OpenStreetMap für Kartendaten</a>
+                    </li>
                 </ul>
             </article>
 
@@ -237,35 +259,26 @@
                 <p>Für die Karte benutze ich die API von OpenStreetMap, das Fenster mit den Informationen zu den
                     Kolonien ist aber wieder richtig von mir.</p>
                 <p>Ich habe außerdem die Seite noch für Mobilgeräte (Handy & Tablett) optimiert.</p>
-                <p>Ich hoste die Seite über GitHub-Pages. GitHub-Pages ist eine kostenlose Funktion von GitHub, die es
-                    ermöglicht eine statische Website online zu stellen. Der gesamte <a href="#" class="link">Code</a>
-                    für diese
-                    Seite ist dort auch
-                    verfügbar</p>
-                <p>Um die Seite zu erstellen habe ich den Texteditor Visual Studio Code und ein Tool zum generieren
-                    einer <a href="https://coolors.co/588b8b-ffffff-fff1eb-f28f3b-bf4d36-1f1f1f"
-                        class="link">Farbpalette</a> genutzt
-                </p>
-
+                <p>Ich hatte vor die Seite über GitHub-Pages zu hosten, was aber leider nicht funktioniert. Die Seite
+                    ist unter <a href="https://nimajnebg.github.io/schulprojekt/"
+                        class="link">https://nimajnebg.github.io/schulprojekt/</a>
+                    verfügbar, allerdings funktioniert die Karte nicht, weil GitHub Pages es nicht erlaubt Ressourcen
+                    über http (veraltetes und unsicheres Protokoll zum Aufrufen von Websites) zu laden, leider läuft das
+                    was ich
+                    von OpenStreetMap brauche über http, <strong>was ich auch leider nicht ändern kann</strong>. Auf
+                    einer normalen
+                    Website, wenn man seinen eigenen Server hat ist das auch kein Problem, aber es ist ein gratis
+                    Service und es auch grundsätzlich gut, weil https wesentlich sicherer ist.</p>
+                <p>Um auch die Karte ansehen zu können muss man die Dateien auf dem eigenen Rechner haben und index.html
+                    dann mit einem Browser öffnen. Der Code kann unter <a
+                        href="https://github.com/nimajneBG/schulprojekt"
+                        class="link">https://github.com/nimajneBG/schulprojekt</a> heruntergeladen werden.</p>
             </article>
-
-
-            <!--Footer mit Copyright-->
-            <footer>
-                &copy; 2020 by Benjamin Grau
-            </footer>
-
-
         </section>
 
 
-    </main>
 
-
-    <!--Karte "zeichnen"-->
-    <script>drawmap();</script>
-
-
+        <script>drawmap();</script>
 </body>
 
 </html>
