@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+}
+
+[x-cloak] { display: none !important; }
+
+body {
+	font-family: sans-serif;
+	display: flex;
+    justify-content: center;
+}
+
+.container {
+	width: min(800px, 100%);
+	margin: 1.4rem;
+}
+
+header h1, header p {
+	text-align: center;
+}
+
+header {
+	margin-bottom: 2rem;
+}
+
+.array {
+	display: flex;
+	flex-direction: row;
+	margin: 1.2rem 0;
+}
+
+.array_element {
+	border: 1px solid black;
+	padding: .5rem;
+	flex-grow: 1;
+}
+
+.array_element span {
+	display: block;
+	font-family: monospace;
+	text-align: center;
+}
+
+.array_element_index {
+	font-size: small;
+	color: #333;
+}
+
+.array_element_number {
+	font-weight: bold;
+	font-size: larger;
+}
+
+.current {
+	background-color: aqua;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Interaktive Sortieralgorithmen</title>
+	<meta name="description" content="Eine simple Website zur interativen Simulation der Sortieralgorithmen Selection-, Bubble-, Counting und Merge-Sort">
+	<meta name="author" content="Benjamin Grau">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="design.css" rel="stylesheet">
+
+	<!-- Include Alpine.js for reactaivity -->
+	<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+	<script src="script.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+<header>
+<h1>Interaktive Sortieralgorithmen</h1>
+<p><i>von Benjamin Grau &mdash; 2023</i></p>
+</header>
+
+<div x-data="input">
+	<input 
+		type="text" 
+		placeholder="-5,10,2, ..." 
+		x-model="input_text"
+	/>
+	<button @click="send">Array verwenden</button>
+	<p x-show="invalid_flag">Only numbers separated by a comma (<code>,</code>) please</p>
+</div>
+
+<div 
+	class="algo-container" 
+	id="selection-sort"
+	x-data="selectionSort"
+	@newarray.window="receive($event.detail)"
+>
+	<h2>Selection Sort</h2>
+	<p class="step_counter">Laufzeit/Länge: <span x-text="step_count"></span>/<span x-text="initial_array.length"></span></p>
+	<div class="array">
+		<template x-for="(item, index) in initial_array">
+			<div class="array_element" :class="(index == current_pos) && 'current'">
+				<span x-text="index" class="array_element_index"></span>
+				<span x-text="item" class="array_element_number"></span>
+			</div>
+		</template>
+	</div>
+	
+	<button @click="step()" :disabled="finished">Step</button>
+</div>
+</div>
+
+</body>
+
+</html>
