@@ -25,14 +25,20 @@ header {
 	margin-bottom: 2rem;
 }
 
+button, input {
+	padding: .4rem 1rem;
+}
+
 .array {
 	display: flex;
 	flex-direction: row;
-	margin: 1.2rem 0;
+	margin: 1.2rem 0 3rem 0;
+	gap: 5px;
+
 }
 
 .array_element {
-	border: 1px solid black;
+	border: 3px solid black;
 	padding: .5rem;
 	flex-grow: 1;
 }
@@ -53,6 +59,39 @@ header {
 	font-size: larger;
 }
 
-.current {
-	background-color: aqua;
+.smallest {
+	background-color: orange;
+}
+
+.current::after {
+	content: "⮝";
+	position: absolute;
+	margin-top: 1rem;
+	display: block;
+	font-size: x-large;
+	color: red;
+}
+
+.accordion {
+	width: 100%;
+	background-color: white;
+	border: none;
+	text-align: left;
+	cursor: pointer;
+}
+
+.wrapper {
+	border: 1px solid black;
+}
+
+.accordion:after {
+	content: '\02795'; /* Unicode character for "plus" sign (+) */
+	font-size: 13px;
+	color: #777;
+	float: right;
+	margin-left: 5px;
+}
+
+.active:after {
+	content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
