@@ -7,13 +7,13 @@
     <meta name="description" content="Ein Timer für die Abiturprüfungen 2024 in Hessen" />
     <meta name="color-scheme" content="dark light" />
     <title>Abitur Countdown</title>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
     <style type="text/css">
         * {
             margin: 0;
             padding: 0;
             font: inherit;
             color: inherit;
-            background: inherit;
             box-sizing: border-box;
             align-items: center;
         }
@@ -54,6 +54,7 @@
         select {
             border: none;
             cursor: pointer;
+            background: inherit;
         }
 
         #countdown {
@@ -236,6 +237,12 @@
         readI()
         refresh()
         setInterval(refresh, 1000)
+        
+        if ((pruefungen[pruefungen.length - 1] - new Date()) < 0) {
+            const jsConfetti = new JSConfetti()
+
+            jsConfetti.addConfetti()
+        }
     }
 </script>
 </html>
