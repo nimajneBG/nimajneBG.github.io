@@ -10,13 +10,19 @@ const pruefungen = [
     new Date("2024-05-06 09:00"),
     new Date("2024-05-07 09:00"),
     new Date("2024-05-08 09:00"),
+    new Date('2024-06-10 10:00'),
 ]
 
 // Globals
 var index = -1
 var passed = false
 
-const jsConfetti = new JSConfetti()
+// A bit cursed but works in dev
+try { var jsConfetti = new JSConfetti() }
+catch { 
+    console.warn('Unable to load JSConfetti')
+    var jsConfetti = { addConfetti: () => console.log('Imagine confetti 🎉🎊') } 
+}
 
 const $ = id => document.getElementById(id)
 
@@ -28,6 +34,9 @@ const seconds = $('seconds')
 const termin = $('termin')
 const select = $('dehdeu')
 const sign = $('sign')
+const muend = $('muend-termin')
+
+const t = d => Math.floor(d).toString().padStart(2, '0')
 
 function refresh() {
     let d = pruefungen[index] - new Date()
@@ -35,10 +44,10 @@ function refresh() {
        changeSign(true)
     }
     d = Math.abs(d)
-    days.innerHTML = Math.floor(d / (1000 * 60 * 60 * 24)).toString().padStart(2, '0')
-    hours.innerHTML = Math.floor((d / (1000 * 60 * 60)) % 24).toString().padStart(2, '0')
-    minutes.innerHTML = Math.floor((d / 1000 / 60) % 60).toString().padStart(2, '0')
-    seconds.innerHTML = Math.floor((d / 1000) % 60).toString().padStart(2, '0')
+    days.innerHTML = t(d / (1000 * 60 * 60 * 24))
+    hours.innerHTML = t((d / (1000 * 60 * 60)) % 24)
+    minutes.innerHTML = t((d / 1000 / 60) % 60)
+    seconds.innerHTML = t((d / 1000) % 60)
 }
 
 function updateDateText() {
@@ -56,7 +65,8 @@ function findNextTest() {
     // Select last exam if all are over
     changeSign((index === -1))
     if (index === -1) { index = pruefungen.length - 1 }
-        
+    
+    toggleMuend(index == (pruefungen.length - 1))
     
     console.log(`Prüfung i=${index} automatisch als nächste festgelegt`)
     select.value = index
@@ -72,9 +82,22 @@ select.onchange = () => {
         index = select.value
         writeI()
         changeSign(false)
+        toggleMuend(index == (pruefungen.length - 1))
     }
     updateDateText()
     refresh()
+}
+
+muend.onchange = () => {
+    pruefungen[pruefungen.length - 1] = new Date(muend.value)
+    // TODO: Write date to localStorage, or just trust the browser to remember
+    refresh()
+}
+
+function toggleMuend(x) {
+    console.log(x)
+    muend.style.display = (x) ? 'inline-block' : 'none'
+    termin.style.display = (x) ? 'none' : 'inline'
 }
 
 function readI() {
@@ -100,6 +123,7 @@ function readI() {
     }
     select.value = index
     updateDateText()
+    toggleMuend(index == (pruefungen.length - 1))
 }
 
 function writeI() {

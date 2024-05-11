@@ -44,7 +44,7 @@
             font-size: 1.1rem;
         }
         .title { font-size: clamp(1.3rem, 2.5vw, 2.2rem); }
-        select {
+        select, input[type=datetime-local] {
             border: 1px solid var(--c-muted);
             border-radius: 0.25em;
             padding: 0.25em 0.5em;
@@ -54,9 +54,9 @@
         a { text-decoration: underline dashed }
         a:hover { text-decoration-style: solid }
         #countdown {
-            font-family: 'Noto Sans Mono', monospace;
-            font-size: 13.2vw;
+            font-family: 'Noto Sans Mono', 'Consolas', monospace;
             font-weight: 600;
+            font-size: 13.2vw;
             color: var(--c-highlight);
             margin: .7rem 0;
             user-select: none;
@@ -76,7 +76,7 @@
             display: block;
             text-align: center;
         }
-        #sign { display: none; }
+        #sign, #muend-termin { display: none; }
         @media (width > 950px) {
             #countdown { font-size: 10vw; }
         }
@@ -87,7 +87,7 @@
         <span class="noscript">Dieser Timer braucht JavaScript zum Funktionieren</span>
     </noscript>
     <div id="main-container">
-        <p class="title">Zeit bis zur nächsten schriftlichen Abiturprüfung:</p>
+        <p class="title">Zeit bis zur nächsten Abiturprüfung:</p>
         <p id="countdown">
             <span id="sign">-</span><span id="days">00</span>:<span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
         </p>
@@ -117,8 +117,18 @@
             <option value="8">LK/GK Biologie</option>
             <option value="9">LK/GK Mathematik</option>
             <option value="10">LK/GK Chemie</option>
+            <option value="11">Mündliche Prüfung</option>
         </select>
-        am <span id="termin"></span> Uhr
+        am <span id="termin"></span>
+        <input 
+            type="datetime-local" 
+            value="2024-06-10T08:00"
+            min="2024-06-10T08:00"
+            max="2024-06-26T18:00"
+            id="muend-termin" 
+            data-tooltip-text="Gebe selbst den Termin deiner mündliche Prüfung an"
+        />
+        Uhr
     </div>
     <footer class="credits">Benjamin Grau 2024 // Keine Gewähr für die Richtigkeit der Daten // <a href="https://github.com/nimajneBG">GitHub</a></footer>
 </body>
