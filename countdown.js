@@ -10,7 +10,7 @@ const pruefungen = [
     new Date("2024-05-06 09:00"),
     new Date("2024-05-07 09:00"),
     new Date("2024-05-08 09:00"),
-    new Date('2024-06-10 10:00'),
+    new Date('2024-06-10 08:00'),
 ]
 
 // Globals
@@ -89,8 +89,11 @@ select.onchange = () => {
 }
 
 muend.onchange = () => {
-    pruefungen[pruefungen.length - 1] = new Date(muend.value)
-    // TODO: Write date to localStorage, or just trust the browser to remember
+    const newDate = new Date(muend.value)
+    if (isNaN(newDate.getTime())) { return; } // ignore incomplete/invalid inputs
+    pruefungen[pruefungen.length - 1] = newDate
+    localStorage.setItem('muend', newDate)
+    changeSign((newDate - new Date()) < 0)
     refresh()
 }
 
@@ -100,9 +103,22 @@ function toggleMuend(x) {
 }
 
 function readI() {
+    // Termin der mündlichen Prüfung
+    let muendTermin = localStorage.getItem('muend')
+    if (!!muendTermin) {
+        console.log(`Gespeicherte mündliche Prüfung ausgelesen (${muendTermin})`)
+        muendTermin = new Date(muendTermin)
+        pruefungen[pruefungen.length - 1] = muendTermin
+        // Not pretty but working with Dates in JS never is
+        // This monster is needed to change the value of the input[type=datetime-local]
+        muendTermin.setMinutes(muendTermin.getMinutes() - muendTermin.getTimezoneOffset())
+        muend.value = muendTermin.toISOString().slice(0,16)
+    }
+
+    // Ausgewähltes Prüfungsfach
     const urlParams = new URLSearchParams(window.location.search)
     if (urlParams.has('fach')) {    // Reading from URL Parmeters
-        let i = Number(urlParams.get('fach'))
+        const i = Number(urlParams.get('fach'))
         if (i >= 0 && i <= pruefungen.length) { 
             index = i 
             console.log(`Prüfung i=${index} aus URL Parametern ausgelesen`)
