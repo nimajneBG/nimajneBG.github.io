@@ -95,7 +95,6 @@ muend.onchange = () => {
 }
 
 function toggleMuend(x) {
-    console.log(x)
     muend.style.display = (x) ? 'inline-block' : 'none'
     termin.style.display = (x) ? 'none' : 'inline'
 }
@@ -137,7 +136,6 @@ function changeSign(state) {
 }
 
 // Main entry point
-
 readI()
 refresh()
 setInterval(refresh, 1000)
