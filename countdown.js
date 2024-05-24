@@ -17,12 +17,9 @@ const pruefungen = [
 var index = -1
 var passed = false
 
-// A bit cursed but works in dev
-try { var jsConfetti = new JSConfetti() }
-catch { 
-    console.warn('Unable to load JSConfetti')
-    var jsConfetti = { addConfetti: () => console.log('Imagine confetti 🎉🎊') } 
-}
+let jsConfetti = null
+// Option without loading external recourses
+// const jsConfetti = { addConfetti: () => console.log('Imagine confetti 🎉🎊') }
 
 const $ = id => document.getElementById(id)
 
@@ -145,10 +142,44 @@ function writeI() {
     localStorage.setItem('index', index)
 }
 
+function displayConfetti() {
+    // Load JSConfetti the first time it is used
+    // This is done as it is not always needed and in way time critical
+    if (jsConfetti === null) {
+        // Providing the fallback option in case the loading does not work
+        jsConfetti = { addConfetti: () => console.log('Imagine confetti 🎉🎊') } 
+
+        const js = document.createElement('script');
+        js.type = 'text/javascript';
+        js.src = 'https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js';
+
+        const handleError = () => { console.warn('Unable to load JSConfetti. Gracefully falling back to console output') }
+
+        js.onload = () => {
+            try { 
+                jsConfetti = new JSConfetti() 
+                console.log('Successfully loaded JSConfetti')
+            }
+            // Still able to fall back if something should happen
+            catch { handleError() }
+            jsConfetti.addConfetti()
+        }
+
+        js.onerror = () => {
+            handleError()
+            jsConfetti.addConfetti()
+        }
+
+        return document.body.appendChild(js)
+    }
+
+    jsConfetti.addConfetti()
+}
+
 function changeSign(state) {
     passed = state
     sign.style.display = (state) ? 'inline' : 'none'
-    if (state) { jsConfetti.addConfetti() }
+    if (state) { displayConfetti() }
 }
 
 // Main entry point
