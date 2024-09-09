@@ -85,7 +85,7 @@ select.onchange = () => {
     refresh();
 };
 
-function updateMuned() {
+muend.onchange = () => {
     const newDate = new Date(muend.value);
     console.log(`internes Datum der mündlichen Prüfung ${newDate}`)
     if (isNaN(newDate.getTime())) { return; } // ignore incomplete/invalid inputs
@@ -94,9 +94,7 @@ function updateMuned() {
     localStorage.setItem('muend', newDate);
     changeSign((newDate - new Date()) < 0);
     refresh();
-}
-
-muend.onchange = updateMuned;
+};
 
 function toggleMuend(active) {
     muend.style.display = (active) ? 'inline-block' : 'none';
@@ -108,17 +106,15 @@ function readI() {
     let muendTermin = localStorage.getItem('muend');
     if (!!muendTermin) {
         console.log(`Gespeicherte mündliche Prüfung ausgelesen (${muendTermin})`);
-        muendTermin = new Date(muendTermin);
-        // Not pretty but working with Dates in JS never is
+        pruefungen[pruefungen.length - 1] = new Date(muendTermin);
+        // NOTE: Not pretty but working with Dates in JS never is
         // This monster is needed to change the value of the input[type=datetime-local]
-        // pruefungen[pruefungen.length - 1] = muendTermin;
-        muendTermin.setMinutes(muendTermin.getMinutes() - muendTermin.getTimezoneOffset());
-        muend.value = muendTermin.toISOString().slice(0,16);
-        
-        // NOTE: This is not pretty and has a lot of computational overhang but 
-        // at least it works. setting the internal date directly leads to weird 
-        // timezone issues i am unable to debug
-        updateMuned()
+        // It needs to be kept separated from the value used internally as not 
+        // doing so lead to issues where the countdown was wrong by the offset.
+        // Thus tow `Date` instances are used
+        const offsetDate = new Date(muendTermin);
+        offsetDate.setMinutes(offsetDate.getMinutes() - offsetDate.getTimezoneOffset());
+        muend.value = offsetDate.toISOString().slice(0,16);
     }
 
     // Ausgewähltes Prüfungsfach
