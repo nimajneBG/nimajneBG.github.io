@@ -85,18 +85,22 @@ select.onchange = () => {
     refresh();
 };
 
-muend.onchange = () => {
+function updateMuned() {
     const newDate = new Date(muend.value);
+    console.log(`internes Datum der mündlichen Prüfung ${newDate}`)
     if (isNaN(newDate.getTime())) { return; } // ignore incomplete/invalid inputs
     pruefungen[pruefungen.length - 1] = newDate;
+    console.warn(newDate.getTime())
     localStorage.setItem('muend', newDate);
     changeSign((newDate - new Date()) < 0);
     refresh();
-};
+}
 
-function toggleMuend(x) {
-    muend.style.display = (x) ? 'inline-block' : 'none';
-    termin.style.display = (x) ? 'none' : 'inline';
+muend.onchange = updateMuned;
+
+function toggleMuend(active) {
+    muend.style.display = (active) ? 'inline-block' : 'none';
+    termin.style.display = (active) ? 'none' : 'inline';
 }
 
 function readI() {
@@ -105,11 +109,16 @@ function readI() {
     if (!!muendTermin) {
         console.log(`Gespeicherte mündliche Prüfung ausgelesen (${muendTermin})`);
         muendTermin = new Date(muendTermin);
-        pruefungen[pruefungen.length - 1] = muendTermin;
         // Not pretty but working with Dates in JS never is
         // This monster is needed to change the value of the input[type=datetime-local]
+        // pruefungen[pruefungen.length - 1] = muendTermin;
         muendTermin.setMinutes(muendTermin.getMinutes() - muendTermin.getTimezoneOffset());
         muend.value = muendTermin.toISOString().slice(0,16);
+        
+        // NOTE: This is not pretty and has a lot of computational overhang but 
+        // at least it works. setting the internal date directly leads to weird 
+        // timezone issues i am unable to debug
+        updateMuned()
     }
 
     // Ausgewähltes Prüfungsfach
@@ -161,7 +170,7 @@ function displayConfetti() {
                 console.log('Successfully loaded JSConfetti');
             }
             // Still able to fall back if something should happen
-            catch { handleError(); };
+            catch { handleError(); }
             jsConfetti.addConfetti();
         };
 
@@ -179,7 +188,7 @@ function displayConfetti() {
 function changeSign(state) {
     passed = state;
     sign.style.display = (state) ? 'inline' : 'none';
-    if (state) { displayConfetti() };
+    if (state) { displayConfetti(); }
 }
 
 // Main entry point
