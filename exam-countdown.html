@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Benjamin Grau" />
+    <meta name="description" content="Ein Timer Klausurentimer" />
+    <meta name="color-scheme" content="dark light" />
+    <title>Klausur Countdown</title>
+    <script src="./exam-countdown.js" type="text/javascript" defer></script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font: inherit;
+            color: inherit;
+            box-sizing: border-box;
+        }
+        :root {
+            --c-background: #18191a;
+            --c-text: #e4e6eb;
+            --c-highlight: #fff;
+            --c-muted: #4d4f50;
+        }
+        @media (prefers-color-scheme: light) {
+            :root {
+                --c-background: #e4e6eb;
+                --c-text: #242526;
+                --c-highlight: #000;
+            }
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: var(--c-background);
+            color: var(--c-text);
+            font-family: 'Fira Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        #main-container {
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        .title { font-size: clamp(1.3rem, 2.5vw, 2.2rem); }
+        select, input[type=datetime-local] {
+            border: 1px solid var(--c-muted);
+            border-radius: 0.25em;
+            padding: 0.25em 0.5em;
+            cursor: pointer;
+            background: inherit;
+        }
+        a { text-decoration: underline dashed }
+        a:hover { text-decoration-style: solid }
+        #countdown {
+            font-family: 'Noto Sans Mono', 'Consolas', monospace;
+            font-weight: 600;
+            font-size: 13.1vw;
+            color: var(--c-highlight);
+            margin: .7rem 0;
+            user-select: none;
+        }
+        .credits {
+            position: fixed;
+            bottom: 0;
+            padding: 1rem 3rem;
+            text-align: center;
+            color: var(--c-muted);
+        }
+        .noscript { 
+            position: fixed;
+            top: 0;
+            padding: 5rem;
+            font-size: 3rem;
+            display: block;
+            text-align: center;
+        }
+        #sign, #muend-termin { display: none; }
+        @media (width > 950px) {
+            #countdown { font-size: 10vw; }
+        }
+    </style>
+</head>
+<body>
+    <noscript>
+        <span class="noscript">Dieser Timer braucht JavaScript zum Funktionieren</span>
+    </noscript>
+    <div id="main-container">
+        <p class="title">Nächste Klausur in:</p>
+        <p id="countdown">
+            <span id="sign">-</span><span id="days">00</span>:<span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+        </p>
+        <select id="dehdeu">
+            <option value="-1">Automatisch</option>
+            <option value="0">Mathemathische Methoden der Physik</option>
+            <option value="1">Allgemeine Chemie</option>
+            <option value="2">Experimentalphysik</option>
+            <option value="3">Analysis I</option>
+            <option value="4">Andere Prüfung</option>
+        </select>
+        am <span id="termin"></span>
+        <input 
+            type="datetime-local" 
+            id="muend-termin" 
+            data-tooltip-text="Gib selbst einen Termin ein"
+        />
+        Uhr
+    </div>
+    <footer class="credits">Benjamin Grau 2025 // Keine Gewähr für die Richtigkeit der Daten // <a href="https://github.com/nimajneBG">GitHub</a></footer>
+</body>
+</html>
